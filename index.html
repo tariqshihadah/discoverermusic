@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>Discoverer</title>
+
+    <!--LOCAL LINKS-->
+    <link rel="stylesheet" href="styles.css"/>
+
+    <!--EXTERNAL RESOURCES-->
+    <meta charset="urf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body style="background-image:url(images/backgrounds/behind.jpg);background-position:50% 60%;">
+    <div class="container">
+        
+        <!--NAVIGATION BAR-->
+        <div id="nav-placeholder">
+
+        </div>
+        <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        
+        <!--PAGE CONTENT-->
+        <div class="content-wrapper">
+            <div class="big-logo">
+                <img src="images/logos/logo_white.png" alt="Discoverer Logo - white">
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--FOOTER-->
+    <div id="footer-placeholder">
+
+    </div>
+    <script>
+    $(function(){
+        $("#footer-placeholder").load("footer.html");
+    });
+    </script>
+</body>
+
+
+</html>
