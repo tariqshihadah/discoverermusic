@@ -286,6 +286,28 @@ a:hover {
 }
 
 
+/* Banner Styles */
+
+.banner-background {
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+}
+
+.solid-line {
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+.spacer {
+    font-size: 0;
+    height: 10px;
+    width: 100%;
+    line-height: 0px;
+}
+
+
 /* Block Styles */
 
 .block-wrapper {
