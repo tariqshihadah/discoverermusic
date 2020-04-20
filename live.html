@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <title>Discoverer</title>
+
+    <!--LOCAL LINKS-->
+    <link rel="stylesheet" href="styles.css"/>
+
+    <!--EXTERNAL RESOURCES-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+    
+<body>
+    <div class="bg"></div>
+    <div class="bg bg-overlay"></div>
+    <div class="container">
+
+        <!--NAVIGATION BAR-->
+        <div id="nav-placeholder">
+
+        </div>
+        <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+
+        <!--PAGE CONTENT-->
+        <div class="content-wrapper">
+            <div class="block-wrapper">
+                <div class="events-widget-wrapper">
+                    <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script><a class="bit-widget-initializer" data-artist-name="discoverer" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#000000" data-link-color="#00b4a3" data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-display-start-time="true" data-link-text-color="#FFFFFF" data-display-lineup="false" data-display-play-my-city="true" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
+                </div>
+            </div>
+        </div>
+
+        <!--FOOTER-->
+        <div id="footer-placeholder">
+
+        </div>
+        <script>
+        $(function(){
+            $("#footer-placeholder").load("footer.html");
+        });
+        </script>
+
+    </div>
+</body>
+
+
+</html>

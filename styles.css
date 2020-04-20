@@ -26,12 +26,33 @@ body {
     background-attachment: fixed;
 }
 
+.bg {
+    background-image: url(images/backgrounds/behind.jpg);
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-overlay {
+    background-image: url(images/backgrounds/clouds.jpg);
+    opacity: 0.4;
+}
+
 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 64px;
     font-weight: 300;
     font-style: regular;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     color: var(--main-text-color);
     text-shadow: 1px 1px 10px black;
     text-align: center;
@@ -42,7 +63,7 @@ h2 {
     font-size: 48px;
     font-weight: 500;
     font-style: regular;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     color: var(--main-text-color);
     text-shadow: 1px 1px 10px black;
     text-align: center;
@@ -50,10 +71,21 @@ h2 {
 
 h3 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: regular;
+    letter-spacing: 1px;
+    color: var(--main-text-color);
+    text-shadow: 1px 1px 10px black;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
     font-weight: 300;
     font-style: italic;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     color: var(--main-text-color);
     text-shadow: 1px 1px 10px black;
     text-align: center;
@@ -61,10 +93,19 @@ h3 {
 
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     color: var(--main-text-color);
     text-shadow: 1px 1px 10px black;
+}
+
+a {
+    color: var(--main-text-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(72, 189, 228);
 }
 
 .container {
@@ -114,15 +155,28 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    width: 120px;
+    height: 100px;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     user-select: none;
-    box-shadow: 0px 0px 0px black;
-    border-radius: 0px 0px 45% 45%;
+    opacity: 0.9;
+    border-radius: 0px 0px 50% 50%;
+    transition: background-color 0.3s;
+}
+
+.nav-face::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 100px;
+    border-radius: 0px 0px 50% 50%;
+    box-shadow: 0px 0px 50px black;
+    opacity: 0.0;
+    transition: opacity 0.3s;
 }
 
 .nav-link {
@@ -134,13 +188,16 @@ p {
     color: var(--main-text-color);
     text-decoration: none;
     text-shadow: 0.5px 0.5px 3px black;
-    transition: color 0.5s;
+    transition: color 0.3s;
     transition: text-shadow 0.0s;
 }
 
 .nav-face:hover {
     background-color: var(--main-text-color);
-    box-shadow: 0px 0px 50px black;
+}
+
+.nav-face:hover::after {
+    opacity: 0.8;
 }
 
 .nav-face:hover .nav-link {
@@ -153,15 +210,21 @@ p {
     display: flex;
     justify-content: right;
     align-content: center;
-    height: 60px;
+    height: 100px;
 }
 
 .nav-logo img {
     padding-right: 22px;
     margin: auto;
-    height: 50%;
+    height: 40%;
+    opacity: 1.0;
     -webkit-filter: drop-shadow(0.5px 0.5px 2px #222);
     filter:         drop-shadow(0.5px 0.5px 2px #222); 
+    transition: opacity 0.5s;
+}
+
+.nav-logo img:hover {
+    opacity: 0.5;
 }
 
 
@@ -192,11 +255,12 @@ p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-shadow: 2px 2px 10px black;
-    transition: letter-spacing 0.5s;
+    opacity: 1.0;
+    transition: opacity 0.3s;
 }
 
 .footer-link-wrapper a:hover {
-    letter-spacing: 8px;
+    opacity: 0.6;
 }
 
 
@@ -247,6 +311,13 @@ p {
     max-width: 640px;
 }
 
+.events-widget-wrapper {
+    border-radius: 15px;
+    background-color: rgb(219, 219, 219);
+    box-shadow: 5px 5px 30px black;
+    opacity: 0.8;
+}
+
 
 /* Button Styles */
 
@@ -262,15 +333,17 @@ p {
     justify-content: center;
     align-items: center;
     min-height: 60px;
-    width: 80%;
+    width: 60%;
     min-width: 350px;
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 3px;
     text-align: center;
-    text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     user-select: none;
+    border-radius: 30px;
+    opacity: 0.9;
+    box-shadow: 5px 5px 30px black;
     background-color: rgb(80, 80, 80);
     transition: background-color 0.5s;
 }
